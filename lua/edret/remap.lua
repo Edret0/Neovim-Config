@@ -18,6 +18,10 @@ vim.keymap.set("n", "<leader>svwm", function()
     require("vim-with-me").StopVimWithMe()
 end)
 
+-- keymap to open lazyvim plugin manager
+vim.keymap.set("n","<leader>lpm","<cmd>Lazy<CR>")
+require("edret.lazy")
+
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
