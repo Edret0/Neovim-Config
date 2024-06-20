@@ -1,5 +1,5 @@
-
 vim.g.mapleader = " "
+vim.g.maplocalleader = "ll"
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -19,17 +19,16 @@ vim.keymap.set("n", "<leader>svwm", function()
 end)
 
 -- keymap to open lazyvim plugin manager
-vim.keymap.set("n","<leader>lpm","<cmd>Lazy<CR>")
-require("edret.lazy")
+vim.keymap.set("n", "<leader>lpm", "<cmd>Lazy<CR>")
 
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -50,6 +49,16 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/the
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 vim.keymap.set("n", "<leader><leader>", function()
+    vim.cmd("w")
     vim.cmd("so")
 end)
 
+vim.keymap.set("n","<leader>wa", function () vim.cmd("wa") end)
+vim.keymap.set("n", "<leader>t", "<Plug>PlenaryTestFile")
+
+vim.keymap.set("n", "<leader>tht", "<cmd>Telescope help_tags<CR>")
+
+-- mapping to auto indent and go to og line
+vim.keymap.set("n", "<leader>id", "gg=G''")
+
+vim.keymap.set("n", "<leader>hi", ":Telescope highlights<CR>")

@@ -1,3 +1,8 @@
+if vim.bo.filetype == 'netrw' then
+    require("lualine").hide()
+  return
+end
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -18,6 +23,7 @@ require('lualine').setup {
     }
   },
   sections = {
+      
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
